@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+</head>
+
+<body>
+<ul id="test">
+    <li>这是第一条</li>
+    <li>这是第二条</li>
+    <li>这是第三条</li>
+</ul>
+<script>
+//原生js闭包
+var lis_lis =document.getElementById('test').getElementsByTagName("li");
+for (var i = 0, l = lis_lis.length; i < l; i++) {
+    lis_lis[i].onclick = (function(x) {
+        return function() {
+            alert(x);
+        }
+    })(i);
+}
+</script>
+
+
+</body>
+</html>
